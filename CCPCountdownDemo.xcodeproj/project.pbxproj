@@ -17,6 +17,7 @@
 		21193C221D222D440011CF6B /* CCPCountdownDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21193C211D222D440011CF6B /* CCPCountdownDemoUITests.m */; };
 		21D7C2E31D7514EC001EF2D8 /* CCPCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D7C2E21D7514EC001EF2D8 /* CCPCountDownButton.m */; };
 		21D7C2EA1D7522F0001EF2D8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D7C2E91D7522F0001EF2D8 /* MBProgressHUD.m */; };
+		21D7C2EC1D75393F001EF2D8 /* ccpbutton.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21D7C2EB1D75393F001EF2D8 /* ccpbutton.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		21D7C2E21D7514EC001EF2D8 /* CCPCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPCountDownButton.m; sourceTree = "<group>"; };
 		21D7C2E81D7522F0001EF2D8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		21D7C2E91D7522F0001EF2D8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		21D7C2EB1D75393F001EF2D8 /* ccpbutton.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ccpbutton.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		21193BFB1D222D440011CF6B /* CCPCountdownDemo */ = {
 			isa = PBXGroup;
 			children = (
+				21D7C2EB1D75393F001EF2D8 /* ccpbutton.gif */,
 				21D7C2E71D7522F0001EF2D8 /* MBProgressHUD */,
 				21D7C2E01D7514AF001EF2D8 /* CCPCountDownButton */,
 				21193BFF1D222D440011CF6B /* AppDelegate.h */,
@@ -272,6 +275,7 @@
 				21193C0C1D222D440011CF6B /* LaunchScreen.storyboard in Resources */,
 				21193C091D222D440011CF6B /* Assets.xcassets in Resources */,
 				21193C071D222D440011CF6B /* Main.storyboard in Resources */,
+				21D7C2EC1D75393F001EF2D8 /* ccpbutton.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

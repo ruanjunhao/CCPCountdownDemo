@@ -23,7 +23,7 @@
     
     self.CCPCountDownBtn.processColor = [UIColor greenColor];
     
-    self.CCPCountDownBtn.durationOfCountDown = 60;
+    self.CCPCountDownBtn.durationOfCountDown = 10;
     
     
     

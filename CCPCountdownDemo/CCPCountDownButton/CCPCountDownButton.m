@@ -57,7 +57,6 @@
     
     _processColor = processColor;
     
-    
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -74,7 +73,7 @@
         
         self.count = 0;
         // 设置默认的倒计时时长为60秒
-        self.durationOfCountDown = 10;
+        self.durationOfCountDown = 60;
         // 设置button的默认标题为“获取验证码”
         [self setTitle:@"获取验证码" forState:UIControlStateNormal];
     }
@@ -93,7 +92,7 @@
 
         self.count = 0;
         // 设置默认的倒计时时长为60秒
-        self.durationOfCountDown = 10;
+        self.durationOfCountDown = 60;
         // 设置button的默认标题为“获取验证码”
         [self setTitle:@"获取验证码" forState:UIControlStateNormal];
     }
