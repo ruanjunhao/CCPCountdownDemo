@@ -12,5 +12,9 @@
 
 /** 验证码倒计时的时长 */
 @property (nonatomic, assign) NSInteger durationOfCountDown;
+//原始 字体颜色
+@property (nonatomic,strong) UIColor *originalColor;
+//倒计时 字体颜色
+@property (nonatomic,strong) UIColor *processColor;
 
 @end

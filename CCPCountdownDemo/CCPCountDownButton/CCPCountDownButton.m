@@ -35,20 +35,46 @@
     // 倒计时过程中title的改变不更新originalTitle
     if (self.tempDurationOfCountDown == self.durationOfCountDown) {
         self.originalTitle = title;
+        
+        self.originalColor = self.titleLabel.textColor;
     }
 }
+
 
 - (void)setDurationOfCountDown:(NSInteger)durationOfCountDown {
     _durationOfCountDown = durationOfCountDown;
     self.tempDurationOfCountDown = _durationOfCountDown;
 }
 
+- (void)setOriginalColor:(UIColor *)originalColor {
+    
+    _originalColor = originalColor;
+   
+    [self setTitleColor:originalColor forState:UIControlStateNormal];
+}
+
+- (void)setProcessColor:(UIColor *)processColor {
+    
+    _processColor = processColor;
+    
+    
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         
+        if (self.originalColor) {
+            
+            [self setTitleColor:self.originalColor forState:UIControlStateNormal];
+        } else {
+            
+            //默认颜色红色
+            [self setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        }
+        
         self.count = 0;
         // 设置默认的倒计时时长为60秒
-        self.durationOfCountDown = 60;
+        self.durationOfCountDown = 10;
         // 设置button的默认标题为“获取验证码”
         [self setTitle:@"获取验证码" forState:UIControlStateNormal];
     }
@@ -56,9 +82,18 @@
 }
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
+       
+        if (self.originalColor) {
+            [self setTitleColor:self.originalColor forState:UIControlStateNormal];
+        } else {
+            //默认颜色红色
+            [self setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            
+        }
+
         self.count = 0;
         // 设置默认的倒计时时长为60秒
-        self.durationOfCountDown = 60;
+        self.durationOfCountDown = 10;
         // 设置button的默认标题为“获取验证码”
         [self setTitle:@"获取验证码" forState:UIControlStateNormal];
     }
@@ -69,6 +104,7 @@
     self.count ++;
     // 若正在倒计时，不响应点击事件
     if (self.tempDurationOfCountDown != self.durationOfCountDown||self.count != 1) {
+        
         self.count = 0;
         [self HUD];
         return NO;
@@ -80,6 +116,7 @@
 
 //创建定时器，开始倒计时
 - (void)startCountDown {
+    
     // 创建定时器
     self.ccpCountDownTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(updateCCPCountDownButtonTitle) userInfo:nil repeats:YES];
     // 将定时器添加到当前的RunLoop中（自动开启定时器）
@@ -90,13 +127,25 @@
     if (self.tempDurationOfCountDown == 0) {
         // 设置CCPCountDownButton的title为开始倒计时前的title
         [self setTitle:self.originalTitle forState:UIControlStateNormal];
+        [self setTitleColor:self.originalColor forState:UIControlStateNormal];
         // 恢复CCPCountDownButton开始倒计时
         self.tempDurationOfCountDown = self.durationOfCountDown;
         [self.ccpCountDownTimer invalidate];
         self.count = 0;
     } else {
         // 设置CCPCountDownButton的title为当前倒计时剩余的时间
-        [self setTitle:[NSString stringWithFormat:@"重新发送(%zd)", self.tempDurationOfCountDown--] forState:UIControlStateNormal];
+        [self setTitle:[NSString stringWithFormat:@"重新发送(%zds)", self.tempDurationOfCountDown--] forState:UIControlStateNormal];
+        
+        
+        if (self.processColor) {
+            
+            [self setTitleColor:self.processColor forState:UIControlStateNormal];
+            
+        } else {
+            //默认颜色 蓝色
+            [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+
+        }
     }
 }
 
@@ -104,7 +153,8 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.superview.window animated:YES];
     // Set the annular determinate mode to show task progress.
     hud.mode = MBProgressHUDModeText;
-    hud.label.text = NSLocalizedString(@"亲,60s之内请勿重复操作", @"HUD message title");
+    hud.label.text = [NSString stringWithFormat:@"亲,%lds之内请勿重复操作",(long)self.durationOfCountDown];
+//    NSLocalizedString(@"亲,60s之内请勿重复操作", @"HUD message title");
     // Move to bottm center.
     hud.offset = CGPointMake(0.f, MBProgressMaxOffset);
     [hud hideAnimated:YES afterDelay:2.f];

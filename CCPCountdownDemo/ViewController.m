@@ -10,6 +10,7 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet CCPCountDownButton *CCPCountDownBtn;
 
 @end
 
@@ -17,6 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.CCPCountDownBtn.originalColor = [UIColor purpleColor];
+    
+    self.CCPCountDownBtn.processColor = [UIColor greenColor];
+    
+    self.CCPCountDownBtn.durationOfCountDown = 60;
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

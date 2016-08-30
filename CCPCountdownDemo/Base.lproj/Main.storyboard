@@ -22,16 +22,19 @@
                                 <rect key="frame" x="0.0" y="264" width="320" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmB-IS-w3u" customClass="CCPCountDownButton">
-                                        <rect key="frame" x="137" y="12" width="54" height="16"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="50" y="5" width="220" height="30"/>
+                                        <state key="normal" title="获取验证码">
+                                            <color key="titleColor" red="0.0" green="0.51764705879999995" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fmB-IS-w3u" secondAttribute="trailing" constant="50" id="1bV-iH-sL6"/>
                                     <constraint firstAttribute="width" secondItem="zcD-pn-e5O" secondAttribute="height" multiplier="8:1" id="2na-gT-lnP"/>
-                                    <constraint firstItem="fmB-IS-w3u" firstAttribute="leading" secondItem="zcD-pn-e5O" secondAttribute="leading" constant="137" id="KdK-xX-Pbw"/>
-                                    <constraint firstItem="fmB-IS-w3u" firstAttribute="top" secondItem="zcD-pn-e5O" secondAttribute="top" constant="12" id="eda-cD-XHp"/>
-                                    <constraint firstAttribute="bottom" secondItem="fmB-IS-w3u" secondAttribute="bottom" constant="12" id="uW8-kI-yn9"/>
+                                    <constraint firstItem="fmB-IS-w3u" firstAttribute="leading" secondItem="zcD-pn-e5O" secondAttribute="leading" constant="50" id="G1F-J2-JOY"/>
+                                    <constraint firstItem="fmB-IS-w3u" firstAttribute="top" secondItem="zcD-pn-e5O" secondAttribute="top" constant="5" id="HqB-lk-oN9"/>
+                                    <constraint firstAttribute="bottom" secondItem="fmB-IS-w3u" secondAttribute="bottom" constant="5" id="LVk-V4-4xF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -44,6 +47,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="CCPCountDownBtn" destination="fmB-IS-w3u" id="YtK-sE-F8j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
