@@ -16,7 +16,7 @@
   
   self.CCPCountDownBtn.originalColor = [UIColor purpleColor];
   
-  //设置button的title的原始显示颜色,默认的是蓝色
+  //设置button的title的倒计时时显示颜色,默认的是蓝色
   
   self.CCPCountDownBtn.processColor = [UIColor greenColor];
   
